@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhoneStore - Cửa hàng điện thoại</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <a class="logo" href="#home" aria-label="PhoneStore - Trang chủ">
+        <span class="logo-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+                <rect x="6.5" y="2.5" width="11" height="19" rx="2.5"></rect>
+                <path d="M10 5h4"></path>
+                <circle cx="12" cy="18.5" r="1"></circle>
+            </svg>
+        </span>
+        <span class="logo-text">Phone<span>Store</span></span>
+    </a>
+
+    <nav>
+        <a href="#home">Trang chủ</a>
+        <a href="#products">Sản phẩm</a>
+        <a href="#about">Giới thiệu</a>
+        <a href="#contact">Liên hệ</a>
+    </nav>
+
+    <button class="cart-btn" onclick="openCart()">
+        🛒 Giỏ hàng <span id="cartCount">0</span>
+    </button>
+</header>
+
+<section id="home" class="hero">
+    <div>
+        <p class="small-title">CÔNG NGHỆ MỚI NHẤT</p>
+        <h1>Điện thoại chính hãng<br><span>Giá tốt mỗi ngày</span></h1>
+        <p>iPhone, Samsung, Xiaomi và nhiều sản phẩm công nghệ chất lượng.</p>
+        <a href="#products" class="hero-btn">Xem sản phẩm</a>
+    </div>
+</section>
+
+<section id="products" class="products-section">
+    <h2>Sản phẩm nổi bật</h2>
+    <p class="section-desc">Lựa chọn chiếc điện thoại phù hợp với bạn</p>
+
+    <div class="filter">
+        <button class="filter-btn active" onclick="filterProducts('all', this)">Tất cả</button>
+        <button class="filter-btn" onclick="filterProducts('iphone', this)">iPhone</button>
+        <button class="filter-btn" onclick="filterProducts('samsung', this)">Samsung</button>
+        <button class="filter-btn" onclick="filterProducts('xiaomi', this)">Xiaomi</button>
+    </div>
+
+    <div id="productList" class="product-grid">
+
+        <div class="product-card" data-category="iphone">
+            <div class="product-image">📱</div>
+            <h3>iPhone 16 Pro Max</h3>
+            <p class="description">256GB - Titan tự nhiên</p>
+            <p class="price">34.990.000đ</p>
+            <button onclick="addToCart('iPhone 16 Pro Max', 34990000)">Thêm vào giỏ</button>
+        </div>
+
+        <div class="product-card" data-category="iphone">
+            <div class="product-image">📱</div>
+            <h3>iPhone 15</h3>
+            <p class="description">128GB - Màn hình Super Retina</p>
+            <p class="price">19.990.000đ</p>
+            <button onclick="addToCart('iPhone 15', 19990000)">Thêm vào giỏ</button>
+        </div>
+
+        <div class="product-card" data-category="samsung">
+            <div class="product-image">📱</div>
+            <h3>Samsung Galaxy S25 Ultra</h3>
+            <p class="description">256GB - Camera 200MP</p>
+            <p class="price">33.990.000đ</p>
+            <button onclick="addToCart('Samsung Galaxy S25 Ultra', 33990000)">Thêm vào giỏ</button>
+        </div>
+
+        <div class="product-card" data-category="samsung">
+            <div class="product-image">📱</div>
+            <h3>Samsung Galaxy A56</h3>
+            <p class="description">256GB - Pin 5000mAh</p>
+            <p class="price">11.990.000đ</p>
+            <button onclick="addToCart('Samsung Galaxy A56', 11990000)">Thêm vào giỏ</button>
+        </div>
+
+        <div class="product-card" data-category="xiaomi">
+            <div class="product-image">📱</div>
+            <h3>Xiaomi 15 Ultra</h3>
+            <p class="description">512GB - Camera Leica</p>
+            <p class="price">29.990.000đ</p>
+            <button onclick="addToCart('Xiaomi 15 Ultra', 29990000)">Thêm vào giỏ</button>
+        </div>
+
+        <div class="product-card" data-category="xiaomi">
+            <div class="product-image">📱</div>
+            <h3>Redmi Note 14 Pro</h3>
+            <p class="description">256GB - AMOLED 120Hz</p>
+            <p class="price">8.490.000đ</p>
+            <button onclick="addToCart('Redmi Note 14 Pro', 8490000)">Thêm vào giỏ</button>
+        </div>
+
+    </div>
+</section>
+
+<section id="about" class="about">
+    <h2>Vì sao chọn PhoneStore?</h2>
+    <div class="features">
+        <div>🚚<h3>Giao hàng nhanh</h3><p>Giao hàng toàn quốc.</p></div>
+        <div>🛡️<h3>Chính hãng</h3><p>Sản phẩm có nguồn gốc rõ ràng.</p></div>
+        <div>💰<h3>Giá tốt</h3><p>Nhiều chương trình ưu đãi.</p></div>
+        <div>☎️<h3>Hỗ trợ 24/7</h3><p>Tư vấn tận tình.</p></div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Liên hệ</h2>
+    <p>📞 Hotline: 0123 456 789</p>
+    <p>📧 Email: contact@phonestore.vn</p>
+    <p>📍 Địa chỉ: 123 Nguyễn Trãi, Hà Nội</p>
+</section>
+
+<footer>
+    <p>© 2026 PhoneStore. Website bán điện thoại.</p>
+</footer>
+
+<!-- Giỏ hàng -->
+<div id="cartModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeCart()">×</span>
+        <h2>🛒 Giỏ hàng</h2>
+        <div id="cartItems"></div>
+        <div class="cart-total">
+            Tổng tiền: <strong id="cartTotal">0đ</strong>
+        </div>
+        <button class="checkout" onclick="checkout()">Thanh toán</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
